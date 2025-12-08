@@ -7,7 +7,6 @@
     <style>
         body {
             height: 95vh;
-            border: red 1px solid;
             padding: 10px;
         }
 
@@ -23,8 +22,19 @@
         /* snake img */
         #nagin {
             border: black 1px solid;
-            height: 150px;
+            height: 60px;
             position: absolute;
+        }
+        /* eatting item */
+        #food {
+            border: black 1px solid;
+            height: 25px;
+            position: absolute;
+        }
+        .board {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
         }
         .controls {
             height: 13%;
@@ -34,16 +44,16 @@
         }
         /* arrow Img */
         .arrowImg {
-            height: 95px;
-            width: 95px;
+            height: 35px;
+            width: 35px;
             vertical-align: middle;
         }
         /* arrow Button */
         .controlBtn {
             padding: 0px;
             border: 1px solid;
-            height: 100px;
-            width: 100px;
+            height: 40px;
+            width: 40px;
             margin: 2px;
         }
     </style>
@@ -53,15 +63,24 @@
         <!-- Snake area  -->
         <div id="gameArea">
             <img id="nagin"  src="./IMGs/snakeIMGL.jpg" alt="nagin">
-            <!-- <img id="apple" src="./appleIMG.webp" alt=""> -->
+            <img id="food" src="./IMGs/banana.jpg" alt="banana">
         </div>
 
-        <!-- game controls -->
-        <div class="controls">
-            <button onclick="startUp()" class="controlBtn"><img class="arrowImg" src="./IMGs/up-arrow.svg" alt="up"></button><br>
-            <button onclick="startLeft()" class="controlBtn"><img class="arrowImg" src="./IMGs/left-arrow.svg" alt="left"></button>
-            <button onclick="startDown()" class="controlBtn"><img class="arrowImg" src="./IMGs/down-arrow.svg" alt="down"></button>
-            <button onclick="startRight()" class="controlBtn"><img class="arrowImg" src="./IMGs/right-arrow.svg" alt="right"></button>
+        <!-- score board, controls, lifes -->
+        <div class="board">
+            <div class="score">
+                <h1>Score : <span id="countScore">0</span></h1>
+            </div>
+            <!-- game controls -->
+            <div class="controls">
+                <button onclick="startUp()" class="controlBtn"><img class="arrowImg" src="./IMGs/up-arrow.svg" alt="up"></button><br>
+                <button onclick="startLeft()" class="controlBtn"><img class="arrowImg" src="./IMGs/left-arrow.svg" alt="left"></button>
+                <button onclick="startDown()" class="controlBtn"><img class="arrowImg" src="./IMGs/down-arrow.svg" alt="down"></button>
+                <button onclick="startRight()" class="controlBtn"><img class="arrowImg" src="./IMGs/right-arrow.svg" alt="right"></button>
+            </div>
+            <div class="life">
+                <h1>Life : <span id="countLife">3</span></h1>
+            </div>
         </div>
     </div>
 
@@ -69,12 +88,21 @@
         // snake refference
         let snakeRef = document.getElementById("nagin");
 
+        // food refference
+        let foodRef = document.getElementById("food");
+
         // game Area refference
         const gameArea = document.getElementById("gameArea");
 
         // define current positions 
         let currentX = 0;
         let currentY = 0;
+        let foodX = (Math.random())*(gameArea.clientWidth - foodRef.clientWidth);
+        let foodY = (Math.random())*(gameArea.clientHeight - foodRef.clientHeight);
+
+        // initial position (food)
+        foodRef.style.left = foodX + 'px';
+        foodRef.style.top = foodY + 'px';
 
         // clare Interval mate
         let clearInt = 0;
@@ -82,73 +110,100 @@
         // snake speed 
         let sSpeed = 10;
 
+        // score
+        let score = 0; 
+
+        // Life
+        let life = 3;
+
         // starter function 
         function startUp(){
             clearInterval(clearInt);
-            clearInt = setInterval(upSanke, sSpeed);
+            snakeRef.src = "IMGs/snakeImgU.jpg";
+            clearInt = setInterval(upSnake, sSpeed);
         }
         function startLeft(){
             clearInterval(clearInt);
+            snakeRef.src = "IMGs/snakeImgL.jpg";
             clearInt = setInterval(leftSnake, sSpeed);
         }
         function startDown(){
             clearInterval(clearInt);
+            snakeRef.src = "IMGs/snakeImgD.jpg";
             clearInt = setInterval(downSnake, sSpeed);
         }
         function startRight(){
             clearInterval(clearInt);
+            snakeRef.src = "IMGs/snakeImgR.jpg";
             clearInt = setInterval(rightSnake, sSpeed);
         }
 
         // move logic functions
-        function upSanke() {
-            snakeRef.src = "IMGs/snakeImgU.jpg";
+        function upSnake() {
             currentY--;
             snakeRef.style.top = currentY + 'px';
             checkLimit();
         }
         function leftSnake() {
-            snakeRef.src = "IMGs/snakeImgL.jpg";
             currentX--;
             snakeRef.style.left = currentX + 'px';
             checkLimit();
         }
         function downSnake() {
-            snakeRef.src = "IMGs/snakeImgD.jpg";
             currentY++;
             snakeRef.style.top = currentY + 'px';
             checkLimit();
         }
         function rightSnake() {
-            snakeRef.src = "IMGs/snakeImgR.jpg";
             currentX++;
             snakeRef.style.left = currentX + 'px';
             checkLimit();
         }
 
+        
         // function which is check limits
         function checkLimit() {
             // game area width and height
             const areaWidth = gameArea.clientWidth;
             const areaHeight = gameArea.clientHeight;
-
             // snak img width and height
             const snakWidth = snakeRef.clientWidth;
             const snakHeight = snakeRef.clientHeight;
 
+            // when snack touch outer lines
             if(currentX < 0 ||  currentX+snakWidth > areaWidth || currentY < 0 || currentY+snakHeight > areaHeight) {
+                life--;
+                document.getElementById("countLife").innerHTML = life;
+                if(life == 0) {
+                    document.querySelector(".gameZoneDiv").innerHTML = `
+                        <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExOTNmZW1tN3lueHo4dDV2dDJsNThtNHI1OGt1MXoxNXg4bWtzaHhxOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/NwsyhEwo8qPp6MZ776/giphy.gif" 
+                            style="width:100%; height:100%; object-fit:contain;">
+                    `;
+
+                }
                 currentX = (areaWidth-snakWidth)/2;
                 currentY = (areaHeight-snakHeight)/2;
 
                 snakeRef.style.left = currentX + 'px';
                 snakeRef.style.top = currentY + 'px';
             }
+
+            // food imge width and height
+            const foodWidth = foodRef.clientWidth;
+            const foodHeight = foodRef.clientHeight;
+            // when snake eats banana
+            if(foodX < currentX+snakWidth && foodX+foodWidth > currentX && foodY < currentY+snakHeight && foodY+foodHeight > currentY) changePositionOfFood();
         }
 
-        // pendding work:
-            // apple positions
-            // life 
-            // score
+        function changePositionOfFood() {
+            score++;
+            document.getElementById("countScore").innerHTML = score;
+            foodX = (Math.random())*(gameArea.clientWidth - foodRef.clientWidth);
+            foodY = (Math.random())*(gameArea.clientHeight - foodRef.clientHeight);
+            
+            foodRef.style.left = foodX + 'px';
+            foodRef.style.top = foodY + 'px';
+        }
     </script>
 </body>
 </html>
