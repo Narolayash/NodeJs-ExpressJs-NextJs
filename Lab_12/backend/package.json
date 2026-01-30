@@ -1,17 +1,18 @@
 {
-  "name": "lectureprograms",
+  "name": "backend",
   "version": "1.0.0",
-  "description": "lecture codes",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "yash narola",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
+  "type": "commonjs",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^5.2.1",
-    "jsonwebtoken": "^9.0.3",
-    "mongoose": "^9.1.2",
-    "os": "^0.1.2"
+    "mongoose": "^9.1.1"
   }
 }
