@@ -20,16 +20,15 @@ bookSchema.index({ title: 1, author: 1 });
 bookSchema.index({ category: 1 });
 bookSchema.index({ status: 1 });
 
-bookSchema.pre('save', function(next) {
+bookSchema.pre('save', async function() {
     if (this.availableCopies > this.totalCopies) {
-        next(new Error('Available copies cannot exceed total copies'));
+        throw new Error('Available copies cannot exceed total copies');
     }
     if (this.availableCopies === 0) {
         this.status = 'UNAVAILABLE';
     } else {
         this.status = 'AVAILABLE';
     }
-    next();
 });
 
 module.exports = mongoose.model("Book", bookSchema);

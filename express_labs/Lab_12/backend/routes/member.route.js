@@ -1,4 +1,5 @@
 const express = require('express');
+const { body, validationResult } = require('express-validator');
 const memberRouter = express.Router();
 const { 
     getAllMembers, 
@@ -37,7 +38,36 @@ memberRouter.get('/:id', async (req, res) => {
     }
 });
 
-memberRouter.post('/', async (req, res) => {
+memberRouter.post('/', [
+    body('name')
+        .trim()
+        .notEmpty()
+        .withMessage('Name is required'),
+    body('rollNo')
+        .trim()
+        .notEmpty()
+        .withMessage('Roll number is required'),
+    body('email')
+        .trim()
+        .notEmpty()
+        .withMessage('Email is required')
+        .isEmail()
+        .withMessage('Email must be valid'),
+    body('phone')
+        .optional()
+        .trim()
+        .isMobilePhone()
+        .withMessage('Phone number must be valid'),
+], async (req, res) => {
+    // Check if validation found any errors
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        return res.status(400).json({ 
+            success: false, 
+            errors: errors.array() 
+        });
+    }
+
     try {
         const result = await insertMember(req.body);
         res.status(201).json({

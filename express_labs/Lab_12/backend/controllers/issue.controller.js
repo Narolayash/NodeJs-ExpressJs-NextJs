@@ -71,7 +71,7 @@ async function insertIssue(data) {
             throw error;
         }
 
-        if (member.status === 'ACTIVE') {
+        if (member.status !== 'ACTIVE') {
             const error = new Error('cannot issue book to inactive member');
             error.statusCode = 403;
             throw error;
@@ -137,8 +137,15 @@ async function returnBook(issueId) {
 
         const book = await Book.findById(issue.book);
         if (book) {
-            book.availableCopies += 1;
-            await book.save();
+            // Ensure we don't exceed total copies (auto-correction for inconsistent data)
+            if (book.availableCopies < book.totalCopies) {
+                book.availableCopies += 1;
+                await book.save();
+            } else {
+                 // Even if we don't increment, we save to update status if needed, 
+                 // but since we aren't changing anything critical, we can skip save or just save the issue.
+                 console.log('Warning: Book returned but available copies already at max. Data inconsistency detected.');
+            }
         }
 
         return issue;
