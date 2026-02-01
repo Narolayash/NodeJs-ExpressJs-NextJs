@@ -1,4 +1,7 @@
+require('../loadEnv');
 const express = require('express');
+const path = require('path');
+
 const app = express();
 
 // 1. Demonstrate the use of middleware in Express. (A)
@@ -10,18 +13,12 @@ const app = express();
 // };
 
 // app.get('/', demoMiddleWare, (req, res) => {
-//     res.send("HhhhhW!");
+//     res.send("AhhhhW!");
 // });
 
 // app.get('/about', demoMiddleWare, (req, res) => {
 //     res.send("this is about page!");
 // });
-
-// app.listen(3000, ()=>{
-//     console.log("Server chalu chhe bhai!");
-// });
-
-
 
 
 // 2. Demonstrate the use of static middleware in Express. (A) 
@@ -29,14 +26,17 @@ const app = express();
 
 // http://localhost:3000/Hello.txt
 
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
-app.listen(3000, () => {
-    console.log("Sever onnnn!!");   
+app.get('/', (req, res) => {
+    res.send("Lab 10 backend working");
 });
 
-// 3. Install MongoDB and MongoDBCompass (A)   // Done
-// 4. Setup documents in MongoDB. (A)
+const PORT = process.env.LAB_10_PORT
+app.listen(PORT, () => {
+    console.log("Sever onnnn!! @", PORT);   
+});
+
 
 
 
@@ -46,16 +46,6 @@ app.listen(3000, () => {
 // app.get('/', (req, res) => {
 //     res.send("Home page!"); 
 // }); 
-
-
-// app.listen(3000, ()=>{
-//     console.log("Server chalu chhe bhai!");
-// });
-
-
-
-
-
 
 
 // const authAdmin = (req, res, next) => {
@@ -68,8 +58,4 @@ app.listen(3000, () => {
 
 // app.get('/admin', authAdmin, (req, res) => {
 //     res.send("Welcome kaka!");
-// });
-
-// app.listen(3000, ()=>{
-//     console.log("Server chalu chhe bhai!");
 // });

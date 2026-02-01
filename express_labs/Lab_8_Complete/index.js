@@ -1,3 +1,4 @@
+require('../loadEnv'); 
 const express = require('express');
 const fs = require('fs');
 
@@ -9,11 +10,6 @@ const fs = require('fs');
 // app.get('/', (req, res)=>{
 //     res.send("Hello World!");
 // });
-
-// app.listen(3000, ()=>{
-//     console.log("Server started at ", 3000);
-// });
-
 
 
 // 2. Create a webapp with 5 pages like about, contact etc.. using ExpressJS. (B) 
@@ -34,11 +30,6 @@ const fs = require('fs');
 // app.get('/student', (req, res)=>{
 //     res.send("This is student page");
 // });
-
-// app.listen(3000, ()=>{
-//     console.log("Server started at ", 3000);
-// });
-
 
 
 // 3. Create a webapp in NodeJS which reads ƒles like about.txt, contact.txt and display it using 
@@ -63,11 +54,6 @@ const fs = require('fs');
 //     });
 // });
 
-// app.listen(3000, ()=>{
-//     console.log("Server started at ", 3000);
-// });
-
-
 
 // extra ... 
 
@@ -83,6 +69,8 @@ app.get('/', (req, res) => {
     });
 });
 
-app.listen(3000, ()=>{
-    console.log("Server started at ", 3000);
+
+const PORT = process.env.LAB_8_PORT;
+app.listen(PORT, ()=>{
+    console.log("Server started at ", PORT);
 });
