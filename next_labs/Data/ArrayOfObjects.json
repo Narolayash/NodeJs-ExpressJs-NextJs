@@ -1,0 +1,302 @@
+[
+    {
+        "id": 1,
+        "name": "Aarav Sharma",
+        "city": "Mumbai",
+        "age": 24
+    },
+    {
+        "id": 2,
+        "name": "Riya Patel",
+        "city": "Ahmedabad",
+        "age": 22
+    },
+    {
+        "id": 3,
+        "name": "Karan Singh",
+        "city": "Delhi",
+        "age": 28
+    },
+    {
+        "id": 4,
+        "name": "Neha Verma",
+        "city": "Jaipur",
+        "age": 26
+    },
+    {
+        "id": 5,
+        "name": "Rahul Mehta",
+        "city": "Pune",
+        "age": 30
+    },
+    {
+        "id": 6,
+        "name": "Ananya Iyer",
+        "city": "Chennai",
+        "age": 25
+    },
+    {
+        "id": 7,
+        "name": "Vikram Rao",
+        "city": "Bengaluru",
+        "age": 29
+    },
+    {
+        "id": 8,
+        "name": "Pooja Nair",
+        "city": "Kochi",
+        "age": 27
+    },
+    {
+        "id": 9,
+        "name": "Amit Kulkarni",
+        "city": "Nagpur",
+        "age": 31
+    },
+    {
+        "id": 10,
+        "name": "Sneha Joshi",
+        "city": "Nashik",
+        "age": 23
+    },
+    {
+        "id": 11,
+        "name": "Rohit Gupta",
+        "city": "Noida",
+        "age": 34
+    },
+    {
+        "id": 12,
+        "name": "Kavya Malhotra",
+        "city": "Chandigarh",
+        "age": 21
+    },
+    {
+        "id": 13,
+        "name": "Suresh Reddy",
+        "city": "Hyderabad",
+        "age": 35
+    },
+    {
+        "id": 14,
+        "name": "Divya Bansal",
+        "city": "Gurgaon",
+        "age": 28
+    },
+    {
+        "id": 15,
+        "name": "Nitin Agrawal",
+        "city": "Indore",
+        "age": 32
+    },
+    {
+        "id": 16,
+        "name": "Meera Das",
+        "city": "Kolkata",
+        "age": 26
+    },
+    {
+        "id": 17,
+        "name": "Arjun Chawla",
+        "city": "Amritsar",
+        "age": 29
+    },
+    {
+        "id": 18,
+        "name": "Priya Saxena",
+        "city": "Kanpur",
+        "age": 24
+    },
+    {
+        "id": 19,
+        "name": "Manish Tiwari",
+        "city": "Prayagraj",
+        "age": 37
+    },
+    {
+        "id": 20,
+        "name": "Nisha Kapoor",
+        "city": "Ludhiana",
+        "age": 33
+    },
+    {
+        "id": 21,
+        "name": "Aditya Mishra",
+        "city": "Varanasi",
+        "age": 27
+    },
+    {
+        "id": 22,
+        "name": "Shalini Arora",
+        "city": "Faridabad",
+        "age": 31
+    },
+    {
+        "id": 23,
+        "name": "Rakesh Yadav",
+        "city": "Gorakhpur",
+        "age": 36
+    },
+    {
+        "id": 24,
+        "name": "Tanya Roy",
+        "city": "Howrah",
+        "age": 22
+    },
+    {
+        "id": 25,
+        "name": "Sanjay Khanna",
+        "city": "Dehradun",
+        "age": 40
+    },
+    {
+        "id": 26,
+        "name": "Preeti Goyal",
+        "city": "Rohtak",
+        "age": 28
+    },
+    {
+        "id": 27,
+        "name": "Mohit Jain",
+        "city": "Udaipur",
+        "age": 34
+    },
+    {
+        "id": 28,
+        "name": "Ishita Sen",
+        "city": "Siliguri",
+        "age": 25
+    },
+    {
+        "id": 29,
+        "name": "Deepak Soni",
+        "city": "Bhilai",
+        "age": 38
+    },
+    {
+        "id": 30,
+        "name": "Renu Chatterjee",
+        "city": "Durgapur",
+        "age": 35
+    },
+    {
+        "id": 31,
+        "name": "Akash Pandey",
+        "city": "Rewa",
+        "age": 26
+    },
+    {
+        "id": 32,
+        "name": "Swati Tripathi",
+        "city": "Satna",
+        "age": 24
+    },
+    {
+        "id": 33,
+        "name": "Vijay Shekhawat",
+        "city": "Sikar",
+        "age": 41
+    },
+    {
+        "id": 34,
+        "name": "Komal Rathore",
+        "city": "Ratlam",
+        "age": 29
+    },
+    {
+        "id": 35,
+        "name": "Rajeev Saxena",
+        "city": "Mathura",
+        "age": 39
+    },
+    {
+        "id": 36,
+        "name": "Pankaj Mishra",
+        "city": "Basti",
+        "age": 42
+    },
+    {
+        "id": 37,
+        "name": "Sunita Yadav",
+        "city": "Etawah",
+        "age": 34
+    },
+    {
+        "id": 38,
+        "name": "Ankit Verma",
+        "city": "Unnao",
+        "age": 27
+    },
+    {
+        "id": 39,
+        "name": "Monika Jain",
+        "city": "Neemuch",
+        "age": 31
+    },
+    {
+        "id": 40,
+        "name": "Harish Patil",
+        "city": "Kolhapur",
+        "age": 36
+    },
+    {
+        "id": 41,
+        "name": "Shubham Thakur",
+        "city": "Mandi",
+        "age": 28
+    },
+    {
+        "id": 42,
+        "name": "Ayesha Khan",
+        "city": "Bhopal",
+        "age": 25
+    },
+    {
+        "id": 43,
+        "name": "Pranav Kulkarni",
+        "city": "Solapur",
+        "age": 33
+    },
+    {
+        "id": 44,
+        "name": "Farhan Ali",
+        "city": "Aligarh",
+        "age": 29
+    },
+    {
+        "id": 45,
+        "name": "Simran Kaur",
+        "city": "Patiala",
+        "age": 23
+    },
+    {
+        "id": 46,
+        "name": "Rajat Arora",
+        "city": "Panipat",
+        "age": 37
+    },
+    {
+        "id": 47,
+        "name": "Neel Desai",
+        "city": "Valsad",
+        "age": 26
+    },
+    {
+        "id": 48,
+        "name": "Kritika Mishra",
+        "city": "Mirzapur",
+        "age": 24
+    },
+    {
+        "id": 49,
+        "name": "Abhishek Dubey",
+        "city": "Rewari",
+        "age": 32
+    },
+    {
+        "id": 50,
+        "name": "Tanvi Kulkarni",
+        "city": "Sangli",
+        "age": 21
+    }
+]

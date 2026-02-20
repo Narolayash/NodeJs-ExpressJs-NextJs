@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "name": "Prof. Arjun Bala",
+        "img": "https://du-website.s3.ap-south-1.amazonaws.com/U01/Faculty-Photo/15---28-04-2023-02-07-35.jpg",
+        "qualification": "Ph.D.(Pursuing), M.Tech.(CSE)"
+    },
+    {
+        "id": 2,
+        "name": "Dr. Nilesh Gambhava",
+        "img": "https://du-website.s3.ap-south-1.amazonaws.com/U01/Faculty-Photo/3---28-04-2023-02-02-42.jpg",
+        "qualification": "Ph.D. , M.E. (CE)"
+    },
+    {
+        "id": 3,
+        "name": "Dr. Gopi Sanghani",
+        "img": "https://du-website.s3.ap-south-1.amazonaws.com/U01/Faculty-Photo/5---29-04-2023-11-00-29.jpg",
+        "qualification": "Ph.D. , M.E. (CE)"
+    }
+]
