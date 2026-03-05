@@ -39,6 +39,7 @@ export default function RootLayout({
         <Link href="/lab_21">Lab_21</Link> &nbsp;
         <Link href="/lab_22">Lab_22</Link> &nbsp;
         <Link href="/lab_23">lab_23</Link> &nbsp;
+        <br />
         { children }
       </body>
     </html>

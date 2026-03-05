@@ -37,7 +37,7 @@ async function OneStudent_Page({ params } : { params : Promise<{ id : string}>})
                     </div>
 
                     <p className="mt-4 text-gray-600">
-                        📞 {student.phone}
+                        {student.phone}
                     </p>
                 </div>
             </div>
