@@ -1,6 +1,6 @@
-import { PrismaClient } from "@/app/generated/prisma/client";
+import "dotenv/config"
 import { PrismaMariaDb } from "@prisma/adapter-mariadb";
-import "dotenv/config";
+import { PrismaClient } from "@/app/generated/prisma/client";
 
 const adapter = new PrismaMariaDb({
     host: process.env.DATABASE_HOST,
@@ -12,4 +12,4 @@ const adapter = new PrismaMariaDb({
 
 const prisma = new PrismaClient({ adapter });
 
-export { prisma }
+export { prisma };
